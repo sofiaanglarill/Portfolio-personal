@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cinzel Decorative", serif;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 260px;
+  background-color: #ede2e1;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  transition: opacity 0.2s;
+}
+
+.menu a:hover {
+  opacity: 0.5;
+}
+
+.nombre {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+/* ── CONTENIDO ── */
+.contenido {
+  margin-left: 260px;
+  flex: 1;
+  background-color: #e3dfde;
+  padding: 2rem;
+}
