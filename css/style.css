@@ -15,6 +15,24 @@ a {
   color: inherit;
 }
 
+.contenido:has(.fondo-sobre-mi) {
+  padding: 0;
+  background-image: url("../img/fondo_textura_2.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+.contenido-sobre-mi {
+  padding: 0;
+  background-image: url("../img/fondo_textura_2.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
 /* ── LAYOUT ── */
 .layout {
   display: flex;
