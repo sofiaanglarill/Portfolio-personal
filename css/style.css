@@ -67,7 +67,7 @@ a {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-start;
 }
 .menu {
@@ -630,4 +630,113 @@ css.proyecto-texto {
   .foto-link {
     width: 100%;
   }
+}
+
+/* ──PROYECTO PÁGINAS 
+ ── */
+.volver {
+  display: inline-block;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 0.75rem;
+  color: #f6f3f3;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.volver:hover {
+  opacity: 0.5;
+}
+
+.detalle-header {
+  margin-bottom: 3rem;
+}
+
+.detalle-titulo {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 1.4rem;
+  color: #f6f3f3;
+  margin-bottom: 1rem;
+}
+
+.detalle-ficha {
+  display: flex;
+  gap: 2rem;
+  font-family: "IM Fell English", serif;
+  font-size: 0.72rem;
+  color: #888;
+}
+
+.detalle-imagen-principal {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.detalle-imagen-principal img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.detalle-seccion {
+  margin-bottom: 4rem;
+}
+
+.detalle-seccion-titulo {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 0.85rem;
+  color: #f6f3f3;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.detalle-seccion p {
+  font-family: "IM Fell English", serif;
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: #f6f3f3;
+  margin-bottom: 1rem;
+  max-width: 560px;
+}
+
+.detalle-bloque {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.detalle-bloque-texto {
+  flex: 1;
+}
+
+.detalle-bloque-imagen {
+  width: 45%;
+  flex-shrink: 0;
+}
+
+.detalle-bloque-imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.detalle-galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.detalle-galeria img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
