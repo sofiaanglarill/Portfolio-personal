@@ -155,22 +155,21 @@ p {
   justify-content: flex-end;
   padding-right: 6rem;
 }
-.proyecto-texto {
+css.proyecto-texto {
   width: 220px;
   flex-shrink: 0;
-  padding-top: 2rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.proyecto-titulo {
-  font-family: "IBM Plex Serif", serif;
-  font-weight: 200;
-  font-size: 0.9rem;
-  margin-bottom: 1.2rem;
-  position: relative;
-  top: -3.5rem;
-  margin-left: -2rem;
-  color: #f6f3f3;
+.proyecto-imagen {
+  width: 52%;
+  flex-shrink: 0;
+  align-self: flex-start;
 }
+
 .proyecto-info {
   display: flex;
   flex-direction: column;
@@ -182,11 +181,6 @@ p {
   font-size: 0.75rem;
   line-height: 1.6;
   color: #f6f3f3;
-}
-
-.proyecto-imagen {
-  width: 52%;
-  flex-shrink: 0;
 }
 
 .proyecto-imagen img {
@@ -202,8 +196,44 @@ p {
   margin-top: 0.4rem;
   font-family: "IM Fell English", serif;
   font-size: 0.72rem;
-  color: #888;
+  color: #f6f3f3;
   justify-content: flex-end;
+}
+.ver-mas {
+  display: block;
+  margin-top: auto;
+  padding-top: 3rem;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 0.75rem;
+  color: #1f1d1d;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: opacity 0.2s;
+}
+
+.proyecto-texto {
+  width: 220px;
+  flex-shrink: 0;
+  padding-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.proyecto-titulo {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  top: -3.5rem;
+  margin-left: -2rem;
+  color: #f6f3f3;
+}
+
+.ver-mas:hover {
+  opacity: 0.5;
 }
 
 /* ── SLIDER ── */
@@ -211,22 +241,14 @@ p {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 400px;
-}
-
-.slider {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 400px;
+  height: auto;
 }
 
 .slider img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
 }
-
 /* ── CONTACTO ── */
 .contacto-wrapper {
   display: flex;
@@ -235,8 +257,9 @@ p {
   justify-content: center;
   height: 100vh;
   gap: 2rem;
+  margin: 0 auto;
+  text-align: center;
 }
-
 .contacto-titulo {
   font-family: "IBM Plex Serif", serif;
   font-weight: 200;
@@ -263,20 +286,25 @@ p {
 .contacto-links a:hover {
   opacity: 0.5;
 }
-
+.contenido-contacto {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
 /* ── SOBRE MÍ CONTENIDO ── */
 .sobre-mi-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   height: 100vh;
-  max-width: 480px;
-  margin: 0 auto;
+  max-width: 380px;
+  margin: 0 auto 0 9rem;
   gap: 1.5rem;
-  text-align: center;
+  text-align: left;
+  padding-bottom: 8rem;
 }
-
 .sobre-mi-grande {
   font-family: "IBM Plex Serif", serif;
   font-weight: 200;
@@ -290,4 +318,316 @@ p {
   font-size: 0.78rem;
   color: #403d3d;
   line-height: 1.75;
+}
+
+.contenido-sobre-mi {
+  position: relative;
+}
+.sobre-mi-foto {
+  position: absolute;
+  right: -3rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(10deg);
+  height: 110vh;
+  width: auto;
+}
+
+.fotos {
+  position: relative;
+  display: inline-block;
+}
+
+.fotos .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  cursor: pointer;
+}
+
+.fotos:hover .overlay {
+  opacity: 1;
+}
+
+/* ── FOTO HOVER ── */
+.foto-link {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+}
+
+.foto-link .sobre-mi-foto {
+  transition: transform 0.4s ease;
+}
+
+.foto-link:hover .sobre-mi-foto {
+  transform: translateY(calc(-50% - 2rem)) rotate(10deg);
+}
+
+.foto-hover-texto {
+  position: absolute;
+  bottom: 34%;
+  right: 10rem;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 1rem;
+  color: #f7f1f0;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    text-shadow 0.4s ease;
+  white-space: nowrap;
+  text-shadow:
+    0 0 8px #7f0b05,
+    0 0 16px #7f0b05;
+}
+.foto-link:hover .foto-hover-texto {
+  opacity: 1;
+}
+
+.foto-hover-texto:hover {
+  text-shadow:
+    0 0 12px #7f0b05,
+    0 0 24px #7f0b05,
+    0 0 40px #7f0b05;
+}
+
+/* ── MEDIA QUERIES ── */
+
+/* ── DESKTOP GRANDE (min 1440px) ── */
+@media (min-width: 1440px) {
+  .sidebar {
+    width: 360px;
+  }
+
+  .contenido {
+    margin-left: 360px;
+    padding: 5rem 4rem 2rem 8rem;
+  }
+
+  .proyecto-imagen {
+    width: 50%;
+  }
+
+  .slider {
+    height: 500px;
+  }
+}
+
+/* ── DESKTOP NORMAL (max 1280px) ── */
+@media (max-width: 1280px) {
+  .proyecto {
+    padding-right: 3rem;
+  }
+
+  .proyecto-imagen {
+    width: 48%;
+  }
+
+  .sobre-mi-foto {
+    height: 95vh;
+  }
+}
+
+/* ── TABLET (max 1024px) ── */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .contenido {
+    margin-left: 220px;
+    padding: 3rem 2rem 2rem 3rem;
+  }
+
+  .proyecto {
+    padding-right: 2rem;
+    gap: 1.5rem;
+  }
+
+  .proyecto-imagen {
+    width: 46%;
+  }
+
+  .slider {
+    height: 350px;
+  }
+
+  .sobre-mi-wrapper {
+    margin: 0 auto 0 3rem;
+    max-width: 300px;
+  }
+
+  .sobre-mi-foto {
+    height: 85vh;
+    right: -1rem;
+  }
+}
+
+/* ── TABLET PEQUEÑA (max 768px) ── */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 0;
+  }
+
+  .nombre {
+    font-size: 0.75rem;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .contenido {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+  }
+
+  /* proyectos en columna */
+  .contenido-proyectos {
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .proyecto-texto {
+    width: 100%;
+  }
+
+  .proyecto-titulo {
+    top: 0;
+    margin-left: 0;
+  }
+
+  .slider {
+    height: 280px;
+  }
+
+  .proyecto-meta {
+    justify-content: flex-start;
+  }
+
+  /* sobre mi */
+  .contenido-sobre-mi {
+    height: auto;
+    overflow: visible;
+  }
+
+  .sobre-mi-wrapper {
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    height: auto;
+    padding-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .sobre-mi-foto {
+    position: absolute;
+    right: -3rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(10deg);
+    height: 80vh;
+    width: auto;
+  }
+
+  .foto-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    height: 100%;
+    float: none;
+    margin-top: 0;
+  }
+  /* contacto */
+  .contacto-wrapper {
+    height: auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .contenido-contacto {
+    height: auto;
+  }
+
+  /* fondos */
+  .contenido-sobre-mi,
+  .contenido-proyectos,
+  .contenido-contacto,
+  .contenido-inicio {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* ── MÓVIL (max 480px) ── */
+@media (max-width: 480px) {
+  .menu a {
+    font-size: 0.72rem;
+  }
+
+  .nombre {
+    font-size: 0.7rem;
+  }
+
+  .slider {
+    height: 240px;
+  }
+
+  .sobre-mi-grande {
+    font-size: 0.95rem;
+  }
+
+  .sobre-mi-pequeño {
+    font-size: 0.72rem;
+  }
+
+  .sobre-mi-foto {
+    width: 80%;
+  }
+
+  .foto-link {
+    width: 80%;
+  }
+}
+
+/* ── MÓVIL PEQUEÑO (max 375px) ── */
+@media (max-width: 375px) {
+  .menu a {
+    font-size: 0.65rem;
+  }
+
+  .slider {
+    height: 200px;
+  }
+
+  .sobre-mi-foto {
+    width: 100%;
+  }
+
+  .foto-link {
+    width: 100%;
+  }
 }
