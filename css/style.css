@@ -6,7 +6,11 @@
 
 body {
   font-family: "IM Fell English", serif;
-  background-color: #e0dddc;
+  background-image: url("../img/fondo_textura_6.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #1f1d1d;
   line-height: 1.6;
 }
@@ -15,21 +19,34 @@ a {
   color: inherit;
 }
 
-.contenido:has(.fondo-sobre-mi) {
-  padding: 0;
-  background-image: url("../img/fondo_textura_2.jpeg");
+.contenido-inicio {
+  background-image: url("img/fondo_textura_6.6.png");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   overflow: hidden;
 }
+
+.contenido-sobre-mi,
+.contenido-proyectos,
+.contenido-contacto,
+.contenido-inicio {
+  background-image: url("../img/fondo_textura_6.7.png");
+  background-size: auto 230%;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.contenido-proyectos {
+  overflow-y: auto;
+  height: 100vh;
+}
+
 .contenido-sobre-mi {
   padding: 0;
-  background-image: url("../img/fondo_textura_2.jpeg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   height: 100vh;
   overflow: hidden;
 }
@@ -42,7 +59,7 @@ a {
 /* ── SIDEBAR ── */
 .sidebar {
   width: 320px;
-  background-color: #d9d5d3;
+  background-color: #e0dddc;
   padding: 2rem 2rem 2rem 2.5rem;
   position: fixed;
   top: 0;
@@ -152,7 +169,7 @@ p {
   position: relative;
   top: -3.5rem;
   margin-left: -2rem;
-  color: #0c0c0c;
+  color: #f6f3f3;
 }
 .proyecto-info {
   display: flex;
@@ -164,7 +181,7 @@ p {
   font-family: "IM Fell English", serif;
   font-size: 0.75rem;
   line-height: 1.6;
-  color: #706c6c;
+  color: #f6f3f3;
 }
 
 .proyecto-imagen {
@@ -208,4 +225,69 @@ p {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* ── CONTACTO ── */
+.contacto-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 2rem;
+}
+
+.contacto-titulo {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 1rem;
+  color: #f6f3f3;
+  letter-spacing: 0.1em;
+}
+
+.contacto-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contacto-links a {
+  font-family: "IM Fell English", serif;
+  font-size: 0.78rem;
+  color: #403d3d;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.contacto-links a:hover {
+  opacity: 0.5;
+}
+
+/* ── SOBRE MÍ CONTENIDO ── */
+.sobre-mi-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.sobre-mi-grande {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-size: 1.1rem;
+  color: #1f1d1d;
+  line-height: 1.6;
+}
+
+.sobre-mi-pequeño {
+  font-family: "IM Fell English", serif;
+  font-size: 0.78rem;
+  color: #403d3d;
+  line-height: 1.75;
 }
